@@ -12,7 +12,7 @@ $smk: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+}// mixin 1
 
 // showcase-area ----------------------------------------
 .programs-showcase{
@@ -32,10 +32,10 @@ $smk: #f5f5f5;
                 font-size: 41px;
                 text-shadow: $blk 3px 3px 6px;
                 color: $yel;
-            }
-        }
-    }
-}
+            }// span
+        }// h1
+    }// text area
+}// programs showcase
 
 .programs-body{
     hr{
@@ -50,10 +50,7 @@ $smk: #f5f5f5;
             display: flex;
             flex-direction: column;
             padding: 60px 0;
-            
-            p{
-                
-            }
+
                 .heading{
                     h1{
                         margin-bottom: 30px;
@@ -176,7 +173,7 @@ $smk: #f5f5f5;
                 &:hover{
                     transform: scale(1.01);
                     box-shadow: $blk 3px 3px 10px;
-                }
+                }// hover
     
                 .date{
                     font-size: 16px;
@@ -197,8 +194,8 @@ $smk: #f5f5f5;
                         background-image: url(https://static.wixstatic.com/media/efa800_5457dfe3034b4e589d6509d7e6de887b~mv2.jpg);
                         background-position: center;
                         background-size: cover;
-                    }
-                }
+                    }// img
+                }// first child
                 .img{
                     height: 200px;
                     width: 250px;
@@ -225,10 +222,10 @@ $smk: #f5f5f5;
 
                         span{
                             font-size: 6.5vw;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+                        }// span
+                    }// heading
+                }// text area
+            }// container
+        }// container
+    }// prog body
+}// media
