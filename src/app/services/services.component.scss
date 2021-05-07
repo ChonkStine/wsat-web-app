@@ -13,6 +13,16 @@ $smk: #f5f5f5;
 }
 
 // service-showcase ----------------------------------------
+.container{
+  &:nth-child(even){
+    transform: skewy(-1deg);
+
+    .text-area{  
+    transform: skewy(1deg);
+    }// text area end
+  }// child end
+}// container end
+
 .service-showcase {
   @include flexCenter();
   height: 500px;
@@ -29,10 +39,10 @@ $smk: #f5f5f5;
         font-size: 41px;
         text-shadow: $blk 3px 3px 6px;
         color: $yel;
-      }
-    }
-  }
-}
+      }// span end
+    }// h1 end
+  }// text area end
+}// service showcase end
 // service-student ----------------------------------------
 .student-service {
   .container {
@@ -63,10 +73,8 @@ $smk: #f5f5f5;
   #student {
     background-color: $blu;
     color: $whi;
-    transform: skewy(-1deg);
 
     .text-area {
-      transform: skewy(1deg);
       h1 {
         color: $whi;
       } //h1 end
@@ -104,28 +112,19 @@ $smk: #f5f5f5;
 
   #competency-container {
 
-    table {
-      border-collapse: collapse;
-      border-spacing: 0 12px;
-      margin-bottom: 8px;
-    }
-
     .competency-table {
       table {
-        border-collapse: separate;
-        border-spacing: 0 15px;
         width: 60%;
+        box-shadow: #000 1px 1px 8px;
 
         tr:not(.thead) {
           height: 30px;
-          box-shadow: 1px 2px 9px 1px #1414141f;
 
-          &:hover {
+          &:nth-child(odd){
             background-color: $smk;
-          } // & end
+          }// nth child end
         } // tr end
       } // table end
-
     } //competency-table end
 
       .quali-td{ width: 40%; text-align: center; }
@@ -152,6 +151,7 @@ $smk: #f5f5f5;
     } //text-area end
 
     table {
+      transform: skewy(1deg);
       border-collapse: collapse;
       border-spacing: 0 12px;
       margin-bottom: 8px;
@@ -254,7 +254,6 @@ $smk: #f5f5f5;
 }
 
 @media (max-width: 700px) {
-  .about-body {
     .container {
       padding: 0 6vw;
 
@@ -265,8 +264,8 @@ $smk: #f5f5f5;
 
             span {
               font-size: 6.5vw;
-            }
-          }
+            }// span end
+          }// h1 end
         }// .heading end
       }// .text-area end
       .competency-table{
@@ -276,9 +275,7 @@ $smk: #f5f5f5;
           .quali-td{ width: 159px; }
           .assess-td{ width: 79px; }
           .accnum-td{ width: 152px; }
-        }
-      }
+        }// table end
+      }// competency end
     }// .container end
-  }// .about-body end
-  
-}
+}// media end
