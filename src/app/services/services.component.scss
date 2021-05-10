@@ -13,16 +13,6 @@ $smk: #f5f5f5;
 }
 
 // service-showcase ----------------------------------------
-.container{
-  &:nth-child(even){
-    transform: skewy(-1deg);
-
-    .text-area{  
-    transform: skewy(1deg);
-    }// text area end
-  }// child end
-}// container end
-
 .service-showcase {
   @include flexCenter();
   height: 500px;
@@ -39,28 +29,30 @@ $smk: #f5f5f5;
         font-size: 41px;
         text-shadow: $blk 3px 3px 6px;
         color: $yel;
-      }// span end
-    }// h1 end
-  }// text area end
-}// service showcase end
+      }
+    }
+  }
+}
 // service-student ----------------------------------------
 .student-service {
   .container {
+    padding: 50px 65px;
     background-color: $whi;
-    padding: 0 65px;
+
+    &:nth-child(even){
+      transform: skewy(-1deg);
+    }
 
     .text-area {
       display: flex;
       flex-direction: column;
-      p {
-        margin-bottom: 70px;
-      }
+
+
       .heading {
         h1 {
-          margin-bottom: 30px;
+          margin-bottom: 10px;
           color: $blu;
           font-size: 35px;
-          padding-top: 50px;
           span {
             font-size: 35px;
             color: $yel;
@@ -75,6 +67,8 @@ $smk: #f5f5f5;
     color: $whi;
 
     .text-area {
+      transform: skewy(1deg);
+    
       h1 {
         color: $whi;
       } //h1 end
@@ -114,22 +108,17 @@ $smk: #f5f5f5;
 
     .competency-table {
       table {
-        width: 60%;
-        box-shadow: #000 1px 1px 8px;
-
+        width: 70%;      
         tr:not(.thead) {
           height: 30px;
 
-          &:nth-child(odd){
+          &:nth-child(odd) {
             background-color: $smk;
-          }// nth child end
+          } // & end
         } // tr end
       } // table end
-    } //competency-table end
 
-      .quali-td{ width: 40%; text-align: center; }
-      .assess-td{ width: 25%; text-align: center;}
-      .accnum-td{ width: 35%; text-align: center; }
+    } //competency-table end
 
   }//competency container end
 
@@ -141,6 +130,7 @@ $smk: #f5f5f5;
     padding-bottom: 50px;
 
     .text-area {
+      transform: skewy(1deg);
       h1 {
         color: $whi;
       } // h1 end
@@ -155,6 +145,9 @@ $smk: #f5f5f5;
       border-collapse: collapse;
       border-spacing: 0 12px;
       margin-bottom: 8px;
+      &:nth-child(even){
+        transform: skewy(-1deg);
+      }
 
       .thead {
         background-color: $yel;
@@ -170,15 +163,12 @@ $smk: #f5f5f5;
 
     .procedure-table{
       table {
-        height: 183px; width: 80%;
+        height: 183px; width: 80%;        
         ul {
           list-style: lower-roman;
         } // ul end
       } // table end
     } // procedure table end
-
-    .checkreq-td{ width: 50%; text-align: center; }
-    .wheresec-td{ width: 50%; text-align: center; }
 
     .requirements-table {
       table {
@@ -189,8 +179,8 @@ $smk: #f5f5f5;
       } // table end
     } // requirements table end
 
-    .reqtitle-td{ width: 40%; }
-    .reqcontent-td{ width: 60%; text-align: center; }
+    .reqtitle-td{ width: 250px; }
+    .reqcontent-td{ width: 350px; text-align: center; }
 
     .steps-table {
       table {
@@ -200,12 +190,6 @@ $smk: #f5f5f5;
           } // ul end
       } // table end
     } // steps table end
-
-    .clistep-td{ width: 30%; }
-    .actstep-td{ width: 13%; }
-    .feestep-td{ width: 14%; }
-    .procstep-td{ width: 19%; }
-    .personstep-td{ width: 24%; }
   } //assessment-procedure end
 
 
@@ -227,17 +211,12 @@ $smk: #f5f5f5;
 
         tr:not(.thead) {
           box-shadow: 1px 2px 9px 1px #1414141f;
-          height: 30px;          
-
           &:hover {
             background-color: $smk;
           } // & end
         } // tr end
       } // table end
     } //calendar-table end
-
-    .date-td{ width: 40%; text-align: center; }
-    .events-td{ width: 60%; text-align: center; }
 
   } // calendar-area end
 } // student-service end
@@ -253,29 +232,128 @@ $smk: #f5f5f5;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+  .student-service  {
     .container {
-      padding: 0 6vw;
-
+      padding: 50px 6vw;
       .text-area {
         .heading {
           h1 {
             font-size: 6.5vw;
-
             span {
               font-size: 6.5vw;
             }// span end
           }// h1 end
         }// .heading end
-      }// .text-area end
-      .competency-table{
-        table{
-          padding: 0 6vw;
-          width: 390px;
-          .quali-td{ width: 159px; }
-          .assess-td{ width: 79px; }
-          .accnum-td{ width: 152px; }
-        }// table end
-      }// competency end
-    }// .container end
-}// media end
+      }// . text-area end      
+    }// . container end
+  }// . student-service end
+
+  .competency-table{
+    table{      
+      thead{
+        display: none;
+      }// thead end           
+      tbody{    
+        tr{           
+          td{
+            display: block;
+            text-align: right;
+            position: relative;
+            width: 500px;         
+          }// td end
+        }// tr end
+      }// tbody end
+      td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 1em;
+        text-align: left;
+        font-weight: bold;
+      }// td end      
+    }// table end
+  }// .competency-table end
+
+  .calendar-table{
+    table{      
+      thead{
+        display: none;
+      }// thead end           
+      tbody{    
+        tr{           
+          td{
+            display: block;
+            text-align: right;
+            position: relative;
+            width: 560px;         
+          }// td end
+        }// tr end
+      }// tbody end
+      td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 1em;
+        text-align: left;
+        font-weight: bold;
+      }// td end      
+    }// table end
+  }// .calendar-table end
+
+  .procedure-table{
+    table{      
+      thead{
+        display: none;
+      }// thead end           
+      tbody{    
+        tr{           
+          td{
+            display: block;
+            text-align: right;
+            position: relative;
+            width: 580px;         
+          }// td end
+        }// tr end
+      }// tbody end
+      td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 1em;
+        text-align: left;
+        font-weight: bold;
+      }// td end      
+    }// table end
+  }// .procedure-table end
+
+  .steps-table{
+    table{      
+      thead{
+        display: none;
+      }// thead end           
+      tbody{    
+        tr{           
+          td{
+            display: block;
+            text-align: right;
+            position: relative;
+            width: 580px;         
+          }// td end
+        }// tr end
+      }// tbody end
+      td:before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 1em;
+        text-align: left;
+        font-weight: bold;
+      }// td end      
+    }// table end
+  }// .steps-table end
+}
