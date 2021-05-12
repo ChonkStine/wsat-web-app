@@ -16,10 +16,12 @@
       <input class="search-txt" type="text" name="" placeholder="Search" aria-label="search"/>
         <div><i class="fa fa-search search-bar" aria-label="submit search"></i></div>
     </div>
-    <img [src]="burger" class="burger">
+    <img [src]="burger" class="burger" (click)="show()"> 
   </div>
 
 </div>
+
+<div class="sideNav"></div>
 
 <div class="secondary-nav">
 
@@ -81,10 +83,5 @@
     </div>
 
   </div>
-
-  <!-- <div id="copyright">
-    <p>Baguio City School of Arts and Trade Website</p>
-    <p>Copyright © 2021 All Rights Reserved</p>
-  </div> -->
   
 </footer>

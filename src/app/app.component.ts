@@ -1,3 +1,4 @@
+import { query } from '@angular/animations';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,4 +11,17 @@ export class AppComponent {
   logo : string = "assets/images/bcsat-logo.png";
   searchIcon : string = "assets/images/search-icon.png";
   burger : string = "assets/images/burger-menu.png";
-}
+  
+  side = document.querySelector('#sideNav');
+  count: number = 2;
+
+  show(){
+    this.count++;
+    if(this.count % 2 == 0){
+      console.log("run");
+    }
+    else{
+      console.log("test");
+    }
+  }//show end
+}//export end
