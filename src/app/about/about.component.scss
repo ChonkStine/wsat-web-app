@@ -41,13 +41,10 @@ $smk: #f5f5f5;
 
     .container{ 
         background-color: $whi;
-        padding: 30px 65px 65px 65px;
         
         .text-area{
             display: flex;
             flex-direction: column;
-            p{
-            }
                 .heading{
                     h1{
                         margin-bottom: 30px;
@@ -95,7 +92,7 @@ $smk: #f5f5f5;
 @media (max-width: 700px){
     .about-body{
         .container{
-            padding: 0 6vw;
+            padding: 45px 6vw 65px 6vw;
 
             .text-area{
                 .heading{
